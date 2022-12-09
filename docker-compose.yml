@@ -1,0 +1,30 @@
+version: "2.10.2"
+
+services:
+  database:
+    image: postgres
+    container_name: database
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=padel_db
+    volumes:
+      - pgdata:/data/postgres
+  app:
+    build: .
+    container_name: padel_api
+    ports:
+      - 3000:3000
+    volumes:
+     - .:/usr/app
+    links:
+      - database
+    depends_on:
+      - database
+
+volumes:
+  pgdata:
+    driver: local
