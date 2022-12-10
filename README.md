@@ -6,23 +6,30 @@
 
 Padel API is a REST API built with [NestJS](https://github.com/nestjs/nest) framework.
 
+- Prefer yarn!
+
 ## Installation
 
 ```bash
 $ npm install
+# or even
+$ yarn install
 ```
 
 ## Running the app
 
+- Create a `.env` file following the `.env.example` schema, then:
+
 ```bash
-# development
-$ npm run start
+$ docker-compose up
+```
 
-# watch mode
+or
+
+```bash
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# or even
+$ yarn start:dev
 ```
 
 ## Test

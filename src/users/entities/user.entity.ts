@@ -4,45 +4,31 @@ import { PermissionLevel } from './enums/permission-level';
 import { Sex } from './enums/sex';
 
 export abstract class User extends BaseEntity {
-	@Column({
-		name: 'firstName',
-	})
+	@Column()
 	public firstName: string;
 
-	@Column({
-		name: 'surname',
-	})
+	@Column()
 	public surname: string;
 
-	@Column({
-		name: 'cpf',
-	})
+	@Column()
 	public cpf: string;
 
-	@Column({
-		name: 'cityOfResidence',
-	})
+	@Column()
 	public cityOfResidence: string;
 
-	@Column({
-		name: 'email',
-	})
+	@Column()
 	public email: string;
 
-	@Column({
-		name: 'password',
-	})
+	@Column()
 	public password: string;
 
 	@Column({
-		name: 'sex',
 		enumName: 'sex',
 		enum: Sex,
 	})
 	public sex: Sex;
 
 	@Column({
-		name: 'level',
 		enum: PermissionLevel,
 		enumName: 'permissionLevel',
 	})

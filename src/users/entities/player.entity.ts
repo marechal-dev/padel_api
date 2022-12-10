@@ -7,15 +7,12 @@ import { User } from './user.entity';
 @Entity('players')
 export class Player extends User {
 	@Column({
-		name: 'category',
 		enumName: 'playerCategory',
 		enum: Category,
 	})
 	public category: Category;
 
-	@Column({
-		name: 'shirtSize',
-	})
+	@Column()
 	public shirtSize: ShirtSize;
 
 	@ManyToMany(() => Pair)

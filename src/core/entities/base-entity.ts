@@ -1,15 +1,11 @@
-import { randomUUID } from 'crypto';
+import { randomUUID } from 'node:crypto';
 import { CreateDateColumn, PrimaryColumn } from 'typeorm';
 
 abstract class BaseEntity {
-	@PrimaryColumn({
-		name: 'id',
-	})
+	@PrimaryColumn()
 	public readonly id: string;
 
-	@CreateDateColumn({
-		name: 'createdAt',
-	})
+	@CreateDateColumn()
 	public readonly createdAt: Date;
 
 	public constructor() {

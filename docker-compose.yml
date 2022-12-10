@@ -3,7 +3,7 @@ version: "2.10.2"
 services:
   database:
     image: postgres
-    container_name: database
+    container_name: padel_api_database
     restart: always
     ports:
       - 5432:5432
